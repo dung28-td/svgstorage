@@ -2,12 +2,6 @@ import { readdirSync } from "fs";
 import { NextResponse } from "next/server";
 import { resolve } from "path";
 
-interface Icon {
-  name: string
-  iconSet: string
-  variant: string
-}
-
 const icons = readdirSync(resolve('public', 'icon-sets')).reduce<Icon[]>((result, iconSet) => {
   readdirSync(resolve('public', 'icon-sets', iconSet)).forEach(variant => {
     readdirSync(resolve('public', 'icon-sets', iconSet, variant)).forEach(filename => {
@@ -31,7 +25,7 @@ const normalizeString = (str: string) => str.trim().toLowerCase()
 
 export function GET(request: Request) {
   const { searchParams } = new URL(request.url)
-  const { keyword, iconSet, variant, limit = 50, offset = 0 } = Array.from(searchParams.entries()).reduce<IconsSearchParams>((result, [key, value]) => {
+  const { keyword, iconSet, variant, limit = 48, offset = 0 } = Array.from(searchParams.entries()).reduce<IconsSearchParams>((result, [key, value]) => {
     switch (key) {
       case 'limit':
         result.limit = parseInt(value) || undefined
