@@ -1,5 +1,3 @@
-'use client'
-
 import useQuery from "@/hooks/useQuery"
 import Icon from "./Icon"
 import { FixedSizeGrid, GridOnItemsRenderedProps, areEqual } from "react-window"
@@ -40,7 +38,7 @@ export default function IconGrid() {
 
   // force remount grid when new data comes
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const gridKey = useMemo(() => crypto.randomUUID(), [data])
+  const gridKey = useMemo(() => Math.random(), [data])
 
   return (
     <div ref={ref} className="w-full max-w-5xl flex-1 overflow-hidden">
