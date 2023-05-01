@@ -13,9 +13,9 @@ export default function Icon({ iconSet, variant, name }: Props) {
 
   return (
     <div className="flex flex-col overflow-hidden">
-      <div className="p-3 rounded-md self-center bg-white ring-1 ring-inset ring-slate-900/[0.08]">
+      <div className="p-3 rounded-md self-center bg-white dark:dark:bg-zinc-800/30 border border-slate-900/[0.08] dark:border-neutral-800">
         <div
-          className="bg-slate-900 w-6 h-6"
+          className="bg-slate-900 dark:bg-white w-6 h-6"
           style={style}
         />
       </div>

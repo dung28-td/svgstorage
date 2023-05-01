@@ -3,3 +3,5 @@ interface Icon {
   iconSet: string
   variant: string
 }
+
+type IconSets = Record<string, string[]>
