@@ -7,6 +7,7 @@ import { GridChildComponentProps } from "react-window"
 import { useSharedState, useRerender } from "react-hooks-toolkit"
 import { iconSetState, keywordState, variantState } from "@/shared/states"
 import Spinner from "./Spinner"
+import crypto from 'crypto'
 
 const COL = 8
 const LIMIT = 64
